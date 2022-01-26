@@ -270,6 +270,12 @@ class PhotoViewCoreState extends State<PhotoViewCore>
   }
 
   @override
+  void didChangeDependencies() {
+    if (_scaleAnimationController == null) {}
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
     _scaleAnimationController.removeStatusListener(onAnimationStatus);
     _scaleAnimationController.dispose();
